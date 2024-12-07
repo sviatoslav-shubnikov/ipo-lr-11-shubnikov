@@ -19,13 +19,18 @@ class Vehicle:
 
     def __str__(self):
         return f"ID транспорта:{self.vehicle_id},грузоподъёмность:{self.capacity},текущая загрузка:{self.current_load}"
-       
+
+
+class Train(Vehicle):
+    
+    def __init__(self, capacity, number_of_cars):
+        super().__init__(capacity)
+        self.number_of_cars = number_of_cars   
+
+
 class Airplane(Vehicle):
+
     def __init__(self, capacity, max_altitude):
         super().__init__(capacity)
         self.max_altitude = max_altitude
 
-class Van(Vehicle):
-    def __init__(self, capacity, is_refrigerated):
-        super().__init__(capacity)
-        self.is_refrigerated = is_refrigerated

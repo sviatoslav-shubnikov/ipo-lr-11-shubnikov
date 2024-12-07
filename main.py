@@ -1,4 +1,4 @@
-from transport import Client,Vehicle,TransportCompany,Van,Airplane 
+from transport import Client,Vehicle,TransportCompany,Train,Airplane 
 
 def menu():
 	company = TransportCompany("TransCo")
@@ -21,14 +21,14 @@ def menu():
 			company.add_client(Client(name, weight, is_vip))
 			
 		elif res=="2":
-			type_vehicle=input("Выберите вид транспорта(1-самолет,2-фургон):")
+			type_vehicle=input("Выберите вид транспорта(1-самолет,2-поезд):")
 			capacity=float(input("Введите грузоподъёмность: "))
 			if type_vehicle=="1":
 				altitude=input("Введите максимальную высоту полета:")
 				company.add_vehicle(Airplane(capacity,altitude))
 			elif type_vehicle=="2":
-				is_refrigerated=input("Есть холодильник?(Да/Нет):").strip().lower()=='да'
-				company.add_vehicle(Van(capacity,is_refrigerated))
+				number_of_cars=input("Введите количество вагонов:")
+				company.add_vehicle(Train(capacity,number_of_cars))
 			else:
 				print("Введен неправильный тип транспорта")
 
@@ -45,7 +45,7 @@ def menu():
 			print("\nРезультат распределения груза:")
 			for vehicle in company.vehicles:
 				print(vehicle)
-				for client in Vehicle.clients_list:
+				for client in vehicle.clients_list:
 						print(f" - {client.name}: {client.cargo_weight} тонн, VIP: {'да' if client.is_vip else 'нет'}")
 		
 		elif res=="6":
