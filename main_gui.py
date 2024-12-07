@@ -184,9 +184,9 @@ def show_about():
 
     with dpg.window(label="О программе", modal=True, width=400, height=200, tag="about_window"):
         dpg.add_text("Лабораторная работа номер 12")
-        dpg.add_text("Вариант: 4")
+        dpg.add_text("Вариант: 5")
         dpg.add_text("Группа 81 ТП")
-        dpg.add_text("Разработчик: Севрук Владислав Сергеевич")
+        dpg.add_text("Разработчик: Шубников Святослав Эрнестович")
         dpg.add_button(label="Закрыть", callback=lambda: dpg.delete_item("about_window"))
 
 
@@ -219,7 +219,7 @@ def set_last_key(key):
 
 def setup_fonts():
     with dpg.font_registry():
-        with dpg.font("/System/Library/Fonts/ArialHB.ttf", 20) as default_font:
+        with dpg.font("C:/Windows/Fonts/Arial.ttf", 20) as default_font:
             dpg.add_font_range_hint(dpg.mvFontRangeHint_Default)
             dpg.add_font_range_hint(dpg.mvFontRangeHint_Cyrillic)
             dpg.bind_font(default_font)
