@@ -25,10 +25,10 @@ def menu():
 			capacity=input("Введите грузоподъёмность: ")
 			if type_vehicle=="1":
 				altitude=input("Введите максимальную высоту полета:")
-				company.add_vehicle(Airplane(capacity,altitude))
+				company.add_vehicle(Airplane(int(capacity),int(altitude)))
 			elif type_vehicle=="2":
 				number_of_cars=input("Введите количество вагонов:")
-				company.add_vehicle(Train(capacity,number_of_cars))
+				company.add_vehicle(Train(int(capacity),int(number_of_cars)))
 			else:
 				print("Введен неправильный тип транспорта")
 
