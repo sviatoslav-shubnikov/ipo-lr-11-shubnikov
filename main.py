@@ -22,7 +22,7 @@ def menu():
 			
 		elif res=="2":
 			type_vehicle=input("Выберите вид транспорта(1-самолет,2-поезд):")
-			capacity=float(input("Введите грузоподъёмность: "))
+			capacity=input("Введите грузоподъёмность: ")
 			if type_vehicle=="1":
 				altitude=input("Введите максимальную высоту полета:")
 				company.add_vehicle(Airplane(capacity,altitude))
